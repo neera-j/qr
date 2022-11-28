@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Scan the QR code to connect with whatsapp multi device"
+    />
+    <title>X-ASENA QR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="code">
+      <div class="card">
+        <img
+          id="qr-code"
+          class="code_1"
+          src="/qr"
+          alt=""
+          title="Scan the QR code to connect with whatsapp multi device"
+        />
+        <h1 class="title">X-asena</h1>
+      </div>
+    </main>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+    socket.on("message", (data) => {
+      window.location.href = `/session`;
+    });
+  </script>
+  <style>
+    body,
+    html {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Outfit";
+      background: black;
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    main.code {
+      border-radius: 1em;
+      background-color: #141414;
+      width: 21em;
+      height: 28em;
+    }
+
+    div.card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img.code_1 {
+      width: 19em;
+      border-radius: 0.3em;
+      margin-top: 1em;
+    }
+
+    h1.title,
+    p.legend {
+      text-align: center;
+    }
+
+    h1.title {
+      color: #e8e8e8;
+      font-weight: 700;
+      font-size: 1.4em;
+      margin-top: 1em;
+      padding: 0em 1em;
+    }
+    h1 {
+      color: white;
+    }
+  </style>
+</html>
